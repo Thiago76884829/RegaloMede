@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feliz Aniversario, Mi Amor ❤️</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600&display=swap');
+        .font-romantic { font-family: 'Dancing Script', cursive; }
+        .font-sans { font-family: 'Poppins', sans-serif; }
+    </style>
+</head>
+<body class="bg-gradient-to-tr from-pink-100 via-red-50 to-pink-200 min-h-screen flex flex-col justify-center items-center font-sans p-4 overflow-hidden">
+
+    <div class="bg-white/80 backdrop-blur-md p-6 md:p-8 rounded-3xl shadow-xl max-w-lg w-full text-center border border-pink-200 flex flex-col items-center justify-between min-h-[550px] transition-all duration-500">
+        
+        <h1 class="text-4xl md:text-5xl text-red-500 font-romantic mb-2 animate-pulse">
+            Nuestra Historia ❤️
+        </h1>
+
+        <div class="w-full h-64 md:h-72 rounded-2xl overflow-hidden shadow-inner bg-gray-100 my-4 flex items-center justify-center relative">
+            <img id="historia-img" src="" alt="Nuestra foto" class="w-full h-full object-cover transition-opacity duration-500 opacity-100">
+        </div>
+
+        <div class="min-h-[80px] flex items-center justify-center px-2">
+            <p id="historia-texto" class="text-gray-700 text-lg font-medium leading-relaxed transition-opacity duration-500 opacity-100">
+                </p>
+        </div>
+
+        <button id="btn-siguiente" onclick="siguientePaso()" class="mt-6 bg-gradient-to-r from-red-400 to-pink-500 text-white font-semibold px-8 py-3 rounded-full shadow-lg hover:from-red-500 hover:to-pink-600 transform hover:scale-105 active:scale-95 transition-all duration-300 focus:outline-none w-full sm:w-auto">
+            Empezar el viaje ✨
+        </button>
+    </div>
+
+    <script>
+        const pasos = [
+            {
+                texto: "Primero y antes que nada, ¡feliz mes, mi amor! 💖 Sé que este es un detalle sencillo, pero va con todo mi corazón. Cada pequeño gesto es mi forma de demostrarte lo mucho que te amo. 🌹 Acompáñame a descubrir esta sorpresa que preparé para ti... 🥰",
+                imagen: ".//img/img1.jpg" 
+            },
+            {
+                texto: "Lo más mágico de tenerte es ver cómo nos complementamos a la perfección. ✨ Nuestro lazo es tan puro, hermoso y único que le pido a la vida jamás cambiarlo ni perderlo. Eres mi pieza faltante. 🧩❤️",
+                imagen: ".//img/img5.png" 
+            },
+            {
+                texto: "Me fascina cómo con solo escuchar tu voz, leer un mensaje tuyo o ver una foto tuya, una paz inmensa y un amor profundo inundan mi corazón. 🕊️💓 Me siento tan afortunado que a veces me cuesta creer la maravillosa mujer que tengo en mi vida. 👑💖",
+                imagen: ".//img/img8.jpg" 
+            },
+            {
+                texto: "Es maravilloso tener con quién ser verdaderamente yo, sin filtros ni miedos. 🧸 Compartir mis días contigo llena mi alma de una alegría inexplicable que solo tú tienes el poder de causar en mí. ☀️ atarme de tu mano es mi lugar favorito. 🗺️❤️",
+                imagen: ".//img/img3.jpg" 
+            },
+            {
+                texto: "Esa sonrisa tuya es la que quiero cuidar y compartir por el resto de mis días... y es la misma luz que sueño ver reflejada en el rostro de nuestra futura Valentina. 🚼🍼💕 Sería el regalo más hermoso del mundo.",
+                imagen: ".//img/img6.jpg" 
+            },
+            {
+                texto: "Créeme, mi cielo, que estoy dando lo mejor de mí aunque por momentos cueste un poco, no importa.🌟 Porque te amo y, sobre todo, porque te lo mereces. Vales cada segundo, cada esfuerzo y cada suspiro de mi parte. 🌹💪❤️",
+                imagen: ".//img/img9.jpg" 
+            },
+            {
+                texto: "No es que sea celoso... bueno, un poquito sí, ¡para qué te miento! 😜 ¿Cómo pretendes que quiera compartir esa sonrisa si me vuelve loco? Quiero ser siempre el único dueño de tus alegrías, con todo mi amor. 💖🔒",
+                imagen: ".//img/img11.jpg" 
+            },
+            {
+                texto: "A veces me quedo contemplándote y no puedo evitar pensar: ¿cómo es posible que una mujer tan increíblemente hermosa esté conmigo? 😻 Me haces feliz de una manera tan inmensa que ni te lo imaginas. 🌟 Eres mi sueño hecho realidad. 💫",
+                imagen: ".//img/img4.jpg" 
+            },
+            {
+                texto: "Y bueno, no es por presumir... ¡pero es que nos vemos tan hermosos juntos! 😍 Quiero que el mundo entero nos vea y sea testigo de la felicidad tan pura que compartimos. 🌎👩‍❤️‍👨✨",
+                imagen: ".//img/img10.jpg" 
+            },
+            {
+                texto: "Somos tan cómplices en todo que hasta para las travesuras somos idénticos. 😈 Sé que juntos somos un peligro para la natalidad, ¡jajaja! 😂 Pero menos mal que lo controlamos muy bien. ¡Hacemos el equipo perfecto! 🥂🔥",
+                imagen: ".//img/img7.jpg" 
+            },
+            {
+                texto: "Gracias por estar a mi lado, por devolverme la sonrisa y despertar en mí un deseo, una ilusión y un amor tan profundo que jamás pensé sentir por alguien. 💞 Eres la persona que alegra mi vida, y mi mayor felicidad es ver esa sonrisa que tanto me fascina brillar siempre en ti. 👁️‍🗨️✨",
+                imagen: ".//img/img2.jpg" 
+            },
+            {
+                texto: "Adoro recibir tus besitos, son la caricia más dulce de mi día. 😘💋 Tienen una magia inexplicable que me hace flotar y me estremece el alma por completo. 🍯❤️",
+                imagen: ".//img/img15.jpg" 
+            },
+            {
+                texto: "Pero tenerte a ti, con un fondo hermoso detrás, es una combinación celestial. 🌌😍 Me despierta unas ganas infinitas de sostener tu mano y tenerte para siempre en mi vida. Y sé, con el corazón, que así será. ♾️❤️",
+                imagen: ".//img/img18.jpg" 
+            },
+            {
+                texto: "Verte esperándome, rodeada de una vista tan hermosa, me hace suspirar y pensar en el día en que sea yo quien te espere en nuestro hogar con una emoción y un amor imposibles de explicar. 🏡🔑 tear 💖",
+                imagen: ".//img/img21.jpg" 
+            },
+            {
+                texto: "Gracias por un mes más de pura felicidad a tu lado. Te amo demasiado, te adoro con el alma y mi único deseo es que te quedes conmigo para toda la vida. 🌹💞",
+                imagen: ".//img/img24.jpg" 
+            },
+            {
+                texto: "Es una debilidad verte usar mi ropa, ¡te queda espectacular! 👕😍 Hay algo inexplicablemente tierno y sexy en verte feliz, sonriendo y llevando puestas mis camisas. Te apropias de todo mi mundo. 💘",
+                imagen: ".//img/img12.jpg" 
+            },
+            {
+                texto: "Esos ojitos hermosos nunca me pueden faltar. 👀✨ Es una maravilla verlos brillar de felicidad por todo lo bonito que tenemos y el hermoso futuro que paso a paso estamos construyendo juntos. 🏛️❤️",
+                imagen: ".//img/img13.jpg" 
+            },
+            {
+                texto: "Aunque debo confesar que las fotos espontáneas, esas que salen de la nada y sin planearlo, son mis favoritas. Capturan la esencia más pura y real de nuestro amor. 🕊️✨💞",
+                imagen: ".//img/img17.jpg" 
+            },
+            {
+                texto: "Saber que somos felices el uno con el otro es lo único que importa. No interesa el lugar, porque contigo cualquier rincón del mundo se vuelve el más perfecto, cálido y hermoso paisaje. 🗺️🏡💞",
+                imagen: ".//img/img14.jpg" 
+            },
+            {
+                texto: "No me lo vas a negar, mi amor: ¡nos vemos guapísimos juntos! 🥰 Y más cuando las poses nos favorecen y quedan fotos tan perfectas como estas. ¡Me encantan demasiado, demasiado! 📸🔥💕",
+                imagen: ".//img/img16.jpg" 
+            },
+            {
+                texto: "Mi mayor anhelo es caminar contigo una y mil veces más, disfrutando de nuestra paz y de este amor tan bello. 💕 Me fascina que los demás admiren la hermosa pareja que hacemos y que ambos podamos presumirnos con orgullo. 👩‍❤️‍👨👑",
+                imagen: ".//img/img19.jpg" 
+            },
+            {
+                texto: "Contemplar la luna a tu lado, pero de vez en cuando desviar la mirada hacia las estrellas para soñar despiertos... Imaginando nuestro futuro, ideando metas y sabiendo que juntos las haremos realidad. 🌙⭐🚀❤️",
+                imagen: ".//img/img20.jpg" 
+            },
+            {
+                texto: "Gracias por un mes más de pura felicidad a tu lado. Te amo demasiado, te adoro con el alma y mi único deseo es que te quedes conmigo para toda la vida. 🌹 Happy Month, mi amor. 👩‍❤️‍👨 apuntando al infinito... ♾️💞",
+                imagen: ".//img/img22.jpg" 
+            }
+        ];
+
+        let pasoActual = 0;
+
+        const imgElement = document.getElementById('historia-img');
+        const textoElement = document.getElementById('historia-texto');
+        const btnElement = document.getElementById('btn-siguiente');
+        // const musica = document.getElementById('musica'); // Descomenta si usas música
+
+        function actualizarPantalla() {
+            // Animación de desvanecimiento (fade-out)
+            imgElement.style.opacity = 0;
+            textoElement.style.opacity = 0;
+
+            setTimeout(() => {
+                // Cambiar contenido
+                imgElement.src = pasos[pasoActual].imagen;
+                textoElement.textContent = pasos[pasoActual].texto;
+
+                // Modificar el botón según el paso
+                if (pasoActual === 0) {
+                    btnElement.textContent = "Empezar el viaje ✨";
+                } else if (pasoActual === pasos.length - 1) {
+                    btnElement.textContent = "Volver a empezar 🔄";
+                } else {
+                    btnElement.textContent = "Siguiente momento 👉";
+                }
+
+                // Volver a mostrar (fade-in)
+                imgElement.style.opacity = 1;
+                textoElement.style.opacity = 1;
+            }, 400); // Espera que termine la animación de salida
+        }
+
+        function siguientePaso() {
+            // Intentar reproducir música en el primer clic si decides usarla
+            // try { musica.play(); } catch(e) {}
+
+            if (pasoActual < pasos.length - 1) {
+                pasoActual++;
+            } else {
+                pasoActual = 0; // Reinicia al final
+            }
+            actualizarPantalla();
+        }
+
+        // Inicializar la primera pantalla
+        actualizarPantalla();
+    </script>
+</body>
+</html>
